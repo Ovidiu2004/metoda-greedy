@@ -1,0 +1,13 @@
+valoarea_bancnotelor = [1, 5, 10, 20, 50, 100, 200, 500, 1000]
+
+def returnschimb(schimb, valoarea_bancnotelor):
+    returneaza = [0] * len(valoarea_bancnotelor)
+    for pos, moneda in enumerate(reversed(valoarea_bancnotelor)):
+        while moneda <= schimb:
+            schimb = schimb - moneda
+            returneaza[pos] += 1
+    return(returneaza)
+
+suma=int(input('Dati suma necesara='))
+print('Valoarea bancnotelor',[1000, 500, 200, 100, 50, 20, 10, 5, 1])
+print('Numarul de bancnote',returnschimb(suma, valoarea_bancnotelor))
